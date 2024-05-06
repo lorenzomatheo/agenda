@@ -33,28 +33,41 @@ def favoritarContato():
         print("Telefone: " + telefone)
         print("Email: " + email)
 
+#função para encerrar o ciclo
+def encerrarAgenda():
+    break
+
+
+
+
+
 
 def dicionarioFuncoes(opcao):
     opcoes = {
         1: visualizarListadeContatos,
         2: salvarContato,
         3: favoritarContato,
-    
+        4: encerrarAgenda
     }
-
-   
     opcoes[opcao]()
-opcao = int(input("\nEscolha uma opção (1 - Visualizar Lista de Contatos, 2 - Salvar Contato, 3 - Favoritar Contato): " ))
-if opcao == 1:
-    print("1 - Visualizar Lista de Contatos")
-    dicionarioFuncoes(opcao)
-elif opcao == 2:
-    print("Contato Salvo!")
-    dicionarioFuncoes(opcao)
-elif opcao == 3:
-    print("2 - Salvar Contato")
-    dicionarioFuncoes(opcao)    
-else:   
-    print("Opção inválida. Por favor, insira um número válido.")
+
+while True:
+    opcao = int(input("\nEscolha uma opção (1 - Visualizar Lista de Contatos, 2 - Salvar Contato, 3 - Favoritar Contato, 4 - Encerrar Agenda): " ))
+    if opcao == 1:
+        print("1 - Visualizar Lista de Contatos")
+        dicionarioFuncoes(opcao)
+    elif opcao == 2:
+        print("2 - Salvar Contato")
+        dicionarioFuncoes(opcao)
+    elif opcao == 3:
+        print("3 - Favoritar Contato")
+        dicionarioFuncoes(opcao)
+    elif opcao == 4:
+        print("4 - Encerrar Agenda")
+        dicionarioFuncoes(opcao)
+        break
+    else:
+        print("Opção inválida. Por favor, insira um número válido.")
+
 
 
