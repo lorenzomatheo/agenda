@@ -11,11 +11,17 @@ def salvarContato():
     contato = {"Nome": nome, "Telefone": telefone, "Email": email}
     contatos.append(contato)
 
-def editarContato():
-    return 0;
-
-
-
+def editarContato(opcao):
+    nomeAEditar = input("Digite o contato que você quer editar: ")
+    for contato in contatos:
+        if(contato["Nome"] == nomeAEditar):
+            opcoes = {
+        1: nome,
+        2: telefone,
+        3: email,
+        }
+        opcoes[opcao]()
+        opcaoDeEdicao = int(input("\nEscolha uma opção que você deseja editar (1 - Nome , 2 - Telefone, 3 - Email): " ))
 
 
 #função de deletar contato
@@ -57,6 +63,7 @@ def dicionarioFuncoes(opcao):
         4: favoritarContato,
         5: deletarContato
     }
+    # puxar número selecionado no input opcao
     opcoes[opcao]() #??
 
 while True:
@@ -74,10 +81,10 @@ while True:
         print("4 - Favoritar Contato")
         dicionarioFuncoes(opcao)
     elif opcao == 5:
-        print("4 - Deletar Contato")
+        print("5 - Deletar Contato")
         dicionarioFuncoes(opcao)
     elif opcao == 6:
-        print("5 - Encerrar Agenda")
+        print("6 - Encerrar Agenda")
         break
     else:
         print("Opção inválida. Por favor, insira um número válido.")
