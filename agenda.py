@@ -11,17 +11,52 @@ def salvarContato():
     contato = {"Nome": nome, "Telefone": telefone, "Email": email}
     contatos.append(contato)
 
-def editarContato(opcao):
-    nomeAEditar = input("Digite o contato que você quer editar: ")
+def editarContato():
+    nomeAEditar = input("Digite o contato que deseja editar:")
     for contato in contatos:
-        if(contato["Nome"] == nomeAEditar):
-            opcoes = {
-        1: nome,
-        2: telefone,
-        3: email,
-        }
-        opcoes[opcao]()
-        opcaoDeEdicao = int(input("\nEscolha uma opção que você deseja editar (1 - Nome , 2 - Telefone, 3 - Email): " ))
+        if(nomeAEditar == contato["Nome"]):
+            opcao = int(input("Digite o que você deseja editar do contato:(1 - Nome, 2 - Telefone, 3 - Email)"))
+            while True:
+                if opcao == 1:
+                    novo_nome = input("Digite o novo nome para esse contato:")
+                    contato["Nome"] = novo_nome
+                    opcaoDeEdicao = input("Deseja editar outro campo do mesmo contato? (S/N): ").upper()
+                    if opcaoDeEdicao == 'S':
+                        editarContato()
+                    elif opcaoDeEdicao == 'N':    
+                        break
+                    else:
+                        print("Opção de editar inválida")
+                        break
+                elif opcao == 2:
+                    novo_telefone = input("Digite o novo telefone para esse contato:")
+                    contato["Telefone"] = novo_telefone
+                    opcaoDeEdicao = input("Deseja editar outro campo do mesmo contato? (S/N): ").upper()
+                    if opcaoDeEdicao == 'S':
+                        editarContato()
+                    elif opcaoDeEdicao == 'N':    
+                        break
+                    else:
+                        print("Opção de editar inválida")
+                        break
+                elif opcao == 3:
+                    novo_email = input("Digite o novo email para esse contato:")
+                    contato["Email"] = novo_email
+                    opcaoDeEdicao = input("Deseja editar outro campo do mesmo contato? (S/N): ").upper()
+                    if opcaoDeEdicao == 'S':
+                        editarContato()
+                    elif opcaoDeEdicao == 'N':    
+                        break
+                    else:
+                        print("Opção de editar inválida")
+                        break
+                else:
+                    print("Opção Inválida")
+                    
+        else:
+            print("Contato inválido")
+
+
 
 
 #função de deletar contato
@@ -58,16 +93,17 @@ def visualizarListadeContatos():
 def dicionarioFuncoes(opcao):
     opcoes = {
         1: visualizarListadeContatos,
-        2: salvarContato,
-        3: editarContato,
-        4: favoritarContato,
-        5: deletarContato
+        2: visualizarListadeContatosFavoritados,
+        3: salvarContato,
+        4: editarContato,
+        5: favoritarContato,
+        6: deletarContato
     }
     # puxar número selecionado no input opcao
     opcoes[opcao]() #??
 
 while True:
-    opcao = int(input("\nEscolha uma opção (1 - Visualizar Lista de Contatos, 2 - Salvar Contato, 3 - Editar Contato 4 - Favoritar Contato, 5 - Deletar Contato, 6 - Encerrar Agenda): " ))
+    opcao = int(input("\nEscolha uma opção (1 - Visualizar Lista de Contatos, 2 - Visualizar Lista de Contatos Favoritados, 3 - Salvar Contato, 4 - Editar Contato 5 - Favoritar Contato, 6 - Deletar Contato, 7 - Encerrar Agenda): " ))
     if opcao == 1:
         print("1 - Visualizar Lista de Contatos")
         dicionarioFuncoes(opcao)
