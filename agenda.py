@@ -124,9 +124,14 @@ def visualizarListadeContatos():
 
 #Função pra imprimir contatos favoritados
 def visualizarListadeContatosFavoritados():
-    return 0;
-    #for contato in contatos:
-        #if():
+    for contato in contatos:
+        if(contato["Favorito"] == '⭐'):
+            print(contato)
+        elif(contato["Favorito"] != '⭐'):
+            pass
+        else:
+            ("Não existe essa opção!")
+            break
 #Função para adicionar novo contato
 def adicionarNovoContato():
     nome_novocontato = input("Insira o nome: ")
