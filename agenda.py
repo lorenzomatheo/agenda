@@ -1,7 +1,4 @@
 #Solicitação de dados da pessoa 
-
-
-
 nome = input("Insira seu nome: ")
 telefone = input("Telefone: ")
 email = input("Email: ")
@@ -16,18 +13,18 @@ def salvarContato():
     contatos.append(contato)
 
 def editarContato():
-    nomeAEditar = input("Digite o contato que deseja editar:")
+    nome_editar = input("Digite o contato que deseja editar:")
     for contato in contatos:
-        if(nomeAEditar == contato["Nome"]):
+        if(nome_editar == contato["Nome"]):
             opcao = int(input("Digite o que você deseja editar do contato:(1 - Nome, 2 - Telefone, 3 - Email, 4 - Favoritar/Desfavoritar Contato)"))
             while True:
                 if opcao == 1:
                     novo_nome = input("Digite o novo nome para esse contato:")
                     contato["Nome"] = novo_nome
-                    opcaoDeEdicao = input("Deseja editar outro campo do mesmo contato? (S/N): ").upper()
-                    if opcaoDeEdicao == 'S':
+                    opcao_edicao = input("Deseja editar outro campo do mesmo contato? (S/N): ").upper()
+                    if opcao_edicao == 'S':
                         editarContato()
-                    elif opcaoDeEdicao == 'N':    
+                    elif opcao_edicao == 'N':    
                         break
                     else:
                         print("Opção de editar inválida")
@@ -35,10 +32,10 @@ def editarContato():
                 elif opcao == 2:
                     novo_telefone = input("Digite o novo telefone para esse contato:")
                     contato["Telefone"] = novo_telefone
-                    opcaoDeEdicao = input("Deseja editar outro campo do mesmo contato? (S/N): ").upper()
-                    if opcaoDeEdicao == 'S':
+                    opcao_edicao = input("Deseja editar outro campo do mesmo contato? (S/N): ").upper()
+                    if opcao_edicao == 'S':
                         editarContato()
-                    elif opcaoDeEdicao == 'N':    
+                    elif opcao_edicao == 'N':    
                         break
                     else:
                         print("Opção de editar inválida")
@@ -46,10 +43,10 @@ def editarContato():
                 elif opcao == 3:
                     novo_email = input("Digite o novo email para esse contato:")
                     contato["Email"] = novo_email
-                    opcaoDeEdicao = input("Deseja editar outro campo do mesmo contato? (S/N): ").upper()
-                    if opcaoDeEdicao == 'S':
+                    opcao_edicao = input("Deseja editar outro campo do mesmo contato? (S/N): ").upper()
+                    if opcao_edicao == 'S':
                         editarContato()
-                    elif opcaoDeEdicao == 'N':    
+                    elif opcao_edicao == 'N':    
                         break
                     else:
                         print("Opção de editar inválida")
@@ -74,10 +71,10 @@ def editarContato():
                                 print(contato)  # Não faz nada, mantém o valor atual
                             else:
                                 print("Opção inválida. Pulando para o próximo contato.")
-                            opcaoDeEdicao = input("Deseja editar outro campo do mesmo contato? (S/N): ").upper()
-                            if opcaoDeEdicao == 'S':
+                            opcao_edicao = input("Deseja editar outro campo do mesmo contato? (S/N): ").upper()
+                            if opcao_edicao == 'S':
                                 editarContato()
-                            elif opcaoDeEdicao == 'N':    
+                            elif opcao_edicao == 'N':    
                                 break
                             else:
                                 print("Opção de editar inválida")
@@ -97,9 +94,9 @@ def editarContato():
 
 #função de deletar contato
 def deletarContato():
-    nomeAExcluir = input("Escreva o contato que você deseja excluir: ")
+    nome_aexcluir = input("Escreva o contato que você deseja excluir: ")
     for contato in contatos:
-        if(contato["Nome"] == nomeAExcluir):
+        if(contato["Nome"] == nome_aexcluir):
             contatos.remove(contato)
             print("Usuário excluido")
             break
@@ -132,10 +129,10 @@ def visualizarListadeContatosFavoritados():
         #if():
 #Função para adicionar novo contato
 def adicionarNovoContato():
-    nomeNovoContato = input("Insira o nome: ")
-    telefoneNovoContato = input("Telefone: ")
-    emailNovoContato = input("Email: ") 
-    contato = {"Nome": nomeNovoContato, "Telefone": telefoneNovoContato, "Email": emailNovoContato}
+    nome_novocontato = input("Insira o nome: ")
+    telefone_novocontato = input("Telefone: ")
+    email_novocontato = input("Email: ") 
+    contato = {"Nome": nome_novocontato, "Telefone": telefone_novocontato, "Email": email_novocontato}
     contatos.append(contato)
 
 def dicionarioFuncoes(opcao):
