@@ -1,5 +1,5 @@
 #Solicitação de dados da pessoa 
-from queue import Full
+
 
 
 nome = input("Insira seu nome: ")
