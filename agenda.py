@@ -1,6 +1,6 @@
 #Solicitação de dados da pessoa 
 nome = input("Insira seu nome: ")
-telefone = input("Telefone: ")
+telefone = int(input("Telefone: "))
 email = input("Email: ")
 favorito = ''
 
@@ -11,6 +11,7 @@ contatos = []
 def salvarContato():
     contato = {"Nome": nome, "Telefone": telefone, "Email": email, "Favorito": favorito}
     contatos.append(contato)
+    print("Contato salvo com sucesso!")
 
 def editarContato():
     nome_editar = input("Digite o contato que deseja editar:")
@@ -139,6 +140,7 @@ def adicionarNovoContato():
     email_novocontato = input("Email: ") 
     contato = {"Nome": nome_novocontato, "Telefone": telefone_novocontato, "Email": email_novocontato}
     contatos.append(contato)
+    print("Contato adicionado com sucesso!")
 
 def dicionarioFuncoes(opcao):
     opcoes = {
